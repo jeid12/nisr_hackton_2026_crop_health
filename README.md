@@ -148,16 +148,41 @@ Copy `.env.example` to `.env` and edit it. Never commit `.env`.
 
 ---
 
+## Deployment (Render)
+
+The whole platform runs on Render's free plan, using the `render.yaml` blueprint:
+
+| Service | Type | Source |
+|---------|------|--------|
+| `crophealth-api` | Docker web service (FastAPI) | `Dockerfile` |
+| `crophealth-dashboard` | Static site (Next.js export) | `frontend/` |
+
+**Steps**
+1. Push this repository to GitHub.
+2. In Render, choose **New → Blueprint**, select the repository, and apply. Render creates both services.
+3. Open `crophealth-api` and copy its URL (for example `https://crophealth-api.onrender.com`). Check `<url>/api/v1/health` shows `"model_loaded": true`.
+4. Open `crophealth-dashboard`, go to **Environment**, and set `NEXT_PUBLIC_API_BASE` to the API URL from step 3. Then **Manual Deploy → Clear build cache & deploy**. The value is baked into the static build, so the dashboard must be rebuilt after it changes.
+5. Open the dashboard URL. That is the live link. Sign in with `admin` / `crophealth2026`.
+
+**Notes**
+- Free services sleep after 15 minutes without traffic and take about a minute to wake. Open the link shortly before evaluation.
+- To run the backend container locally: `docker build -t crophealth-api .` then `docker run -p 8000:8000 crophealth-api`.
+
+**Live app:** `<add dashboard URL here>` · **Sign-in:** `admin` / `crophealth2026`
+
+---
+
 ## Submission checklist (NISR webinar rules)
 
 | Requirement | Status |
 |-------------|--------|
 | README explaining data, purpose, and interaction | Done (this file and `models/README.md`) |
-| Scripts that run on any machine | Done (`app.py`, `backend/`, `frontend/`) |
-| Demonstration video, 3 minutes maximum, in `demo/` | **Pending:** `demo/` is empty |
-| Data files or links, noted in the README if too large | Done (`data/`) |
-| Student cards for both members in `student_cards/` | Partly done: one file present, needs both members merged into `student_cards.pdf` |
-| Public deployed app link, with sample credentials if login is required | **Pending:** add the link above and keep the demo credentials in this README |
+| Scripts that run on any machine | Done (`app.py`, `backend/`, `frontend/`, `requirements.txt`) |
+| Demonstration video, 3 minutes maximum, in `demo/` | Done: `demo/demo.webm` (about 50 seconds, screen recording of the running dashboard) |
+| Data files or links, noted in the README if too large | Done (`data/`, about 1 MB) |
+| Student cards for both members in `student_cards/` | **Pending:** one card is present; the second member's card must be added and merged into `student_cards/student_cards.pdf` |
+| Public GitHub repository | **Pending:** push to a public repository |
+| Public deployed app link, with sample credentials | **Pending:** deploy using the steps above and paste the link in this README |
 
 ---
 

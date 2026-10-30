@@ -1,0 +1,30 @@
+# Keep the image small: the API needs only app.py, backend/, requirements.txt,
+# the dual model, and the unified telemetry CSV.
+
+# Version control, secrets, virtualenvs, and build output
+.git
+.gitignore
+.env
+.env.*
+env/
+.venv/
+**/__pycache__
+**/*.pyc
+
+# Other parts of the submission (not needed by the API)
+frontend/
+demo/
+student_cards/
+hardware/
+render.yaml
+README.md
+models/README.md
+.http
+
+# Raw source tables and the unused baseline model
+data/POWER_*.csv
+data/*.xlsx
+models/crophealth_rf_baseline.pkl
+package-lock.json
+.dockerignore
+Dockerfile
