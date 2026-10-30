@@ -8,8 +8,8 @@ CropHealth EWS forecasts two fungal diseases of Irish potato and tomato, Late Bl
 - **Data:** `data/` (NISR SAS 2026 Season A tables, NASA POWER hourly telemetry, unified training dataset)
 - **Live app:** [https://nisr-hackton-2026-crop-health.vercel.app/](https://nisr-hackton-2026-crop-health.vercel.app/)
 - **Google Colab notebooks:**
-  - [Notebook 1](https://colab.research.google.com/drive/1oWh6HRInuMigTGqDerv6hQr76gTYSd4i?usp=sharing)
-  - [Notebook 2](https://colab.research.google.com/drive/1g5ZgtUVVydzNUs9ITuvT42R7pYN0DIG6?usp=sharing)
+
+  [![Open Notebook 1 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1oWh6HRInuMigTGqDerv6hQr76gTYSd4i?usp=sharing) [![Open Notebook 2 in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1g5ZgtUVVydzNUs9ITuvT42R7pYN0DIG6?usp=sharing)
 
 ---
 
