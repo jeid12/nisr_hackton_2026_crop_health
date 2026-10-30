@@ -6,7 +6,10 @@ CropHealth EWS forecasts two fungal diseases of Irish potato and tomato, Late Bl
 
 - **Model:** `models/crophealth_dual_rf_model.pkl` (details and metrics in [models/README.md](models/README.md))
 - **Data:** `data/` (NISR SAS 2026 Season A tables, NASA POWER hourly telemetry, unified training dataset)
-- **Live app:** add your deployed link here before submission
+- **Live app:** [https://nisr-hackton-2026-crop-health.vercel.app/](https://nisr-hackton-2026-crop-health.vercel.app/)
+- **Google Colab notebooks:**
+  - [Notebook 1](https://colab.research.google.com/drive/1oWh6HRInuMigTGqDerv6hQr76gTYSd4i?usp=sharing)
+  - [Notebook 2](https://colab.research.google.com/drive/1g5ZgtUVVydzNUs9ITuvT42R7pYN0DIG6?usp=sharing)
 
 ---
 
@@ -17,7 +20,7 @@ The dashboard is protected by a sign-in page. Use these demo credentials:
 | Field    | Value           |
 |----------|-----------------|
 | Username | `admin`         |
-| Password | `crophealth2026`|
+| Password | `crophealth2026` |
 
 These are demo credentials for evaluators. To change them, set `CROPHEALTH_USER`, `CROPHEALTH_PASSWORD`, and `CROPHEALTH_SECRET` in a `.env` file (see [.env.example](.env.example)) before you run the backend.
 
@@ -181,7 +184,7 @@ Both services run as Docker containers on Render's free plan, using the `render.
 - Free services sleep after 15 minutes without traffic and take about a minute to wake. Open the link shortly before evaluation.
 - The first Docker build on Render takes several minutes, because it installs the scientific Python packages.
 
-**Live app:** `<add dashboard URL here>` · **Sign-in:** `admin` / `crophealth2026`
+**Live app:** [https://nisr-hackton-2026-crop-health.vercel.app/](https://nisr-hackton-2026-crop-health.vercel.app/) · **Sign-in:** `admin` / `crophealth2026`
 
 ---
 
@@ -209,4 +212,10 @@ Both services run as Docker containers on Render's free plan, using the `render.
 
 ## Team and eligibility
 
-Add team member names and university details here. Eligibility documents are in `student_cards/`.
+**Team**
+- NIYOKWIZERA JEAN D AMOUR
+- UWASE YVONNE
+
+**Affiliation:** African Institute for Mathematical Sciences (AIMS)
+
+Eligibility documents are in `student_cards/`.
