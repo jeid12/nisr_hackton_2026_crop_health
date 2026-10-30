@@ -4,7 +4,7 @@
 
 // Runtime config (public/config.js, written by the container at start) wins over the build-time variable.
 const runtimeApi = typeof window !== 'undefined' ? (window as unknown as { CROPHEALTH_API_BASE?: string }).CROPHEALTH_API_BASE : '';
-export const API_BASE = runtimeApi || process.env.CROPHEALTH_API_BASE || 'http://127.0.0.1:8000';
+export const API_BASE = runtimeApi || process.env.CROPHEALTH_API_BASE || 'https://nisr-hackton-2026-crop-health.onrender.com';
 
 export const SERIES = {
   humidity: '#2a78d6',
