@@ -1,0 +1,10 @@
+# Test the real-time simulation endpoint (Cool & wet Rwaza Marshland scenario)
+curl -X POST "http://127.0.0.1:8000/api/v1/predict/simulate" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "temp_c": 17.2,
+       "humidity_pct": 94.0,
+       "leaf_wetness_norm": 0.90,
+       "soil_moisture_pct": 74.0,
+       "stratum_type": 1
+     }'
