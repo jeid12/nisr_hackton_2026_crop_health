@@ -1,0 +1,61 @@
+WEBVTT
+
+1
+00:00:03.142 --> 00:00:10.144
+Welcome. CropHealth EWS forecasts Late Blight and Early Blight in Musanze, Rwanda, and warns farmers by SMS in Kinyarwanda.
+
+2
+00:00:10.144 --> 00:00:19.107
+Step 1: sign in with the demo account (admin / crophealth2026).
+
+3
+00:00:19.107 --> 00:00:30.107
+Risk Simulator: micro-climate readings produce a risk probability for each disease, with a tier and a recommended action.
+
+4
+00:00:30.107 --> 00:00:41.136
+Preset 1, Rwaza marshland mist: cool, wet, and foggy. Late Blight reaches EMERGENCY and the advice is a systemic fungicide.
+
+5
+00:00:41.136 --> 00:00:55.391
+Sweeping relative humidity down, then back up. While the leaf stays wet, Late Blight risk remains high, so leaf wetness matters as much as humidity.
+
+6
+00:00:55.391 --> 00:01:07.932
+Foliar leaf wetness is the strongest driver in the model. With no water film on the leaf, infection cannot start.
+
+7
+00:01:07.932 --> 00:01:19.653
+Temperature sweep from 16 to 27 degrees. Late Blight favours the 18 degree optimum; Early Blight rises as the air warms.
+
+8
+00:01:19.653 --> 00:01:29.666
+Dispatch: the Kinyarwanda advisory is sent to the farmer’s feature phone through the SMS gateway, and the console confirms delivery.
+
+9
+00:01:29.666 --> 00:01:40.678
+Preset 2, Nkotsi warm and wet hillside: Late Blight is still EMERGENCY, and Early Blight rises to MODERATE.
+
+10
+00:01:40.678 --> 00:01:51.692
+Preset 3, sunny afternoon: both risks fall to SAFE. The advice is to skip spraying, which saves money and protects the soil.
+
+11
+00:01:51.692 --> 00:01:57.725
+Telemetry and NISR Data: 48 hours of field readings for each sector, checked against the 85% humidity and 18 degree thresholds.
+
+12
+00:01:57.725 --> 00:02:04.775
+Switching to Nkotsi hillside to compare the same thresholds on a different site.
+
+13
+00:02:04.775 --> 00:02:17.303
+NISR SAS 2026 Season A: most Musanze farmers already spray chemicals, so targeted warnings can cut unnecessary applications.
+
+14
+00:02:17.303 --> 00:02:32.344
+Feature importance shows which measured conditions the model relies on most.
+
+15
+00:02:32.344 --> 00:02:43.382
+Back to the simulator, then secure sign-out returns to the login page. Thank you.

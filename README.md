@@ -178,7 +178,7 @@ The whole platform runs on Render's free plan, using the `render.yaml` blueprint
 |-------------|--------|
 | README explaining data, purpose, and interaction | Done (this file and `models/README.md`) |
 | Scripts that run on any machine | Done (`app.py`, `backend/`, `frontend/`, `requirements.txt`) |
-| Demonstration video, 3 minutes maximum, in `demo/` | Done: `demo/demo.webm` (about 50 seconds, screen recording of the running dashboard) |
+| Demonstration video, 3 minutes maximum, in `demo/` | Done: `demo/demo.webm` (2 min 42 s, screen recording of the running dashboard with burned-in captions; subtitles also in `demo/demo.vtt`) |
 | Data files or links, noted in the README if too large | Done (`data/`, about 1 MB) |
 | Student cards for both members in `student_cards/` | **Pending:** one card is present; the second member's card must be added and merged into `student_cards/student_cards.pdf` |
 | Public GitHub repository | **Pending:** push to a public repository |
