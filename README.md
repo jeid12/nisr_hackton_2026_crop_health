@@ -70,7 +70,7 @@ Both should return JSON. The health check reports `"model_loaded": true`.
 | `CROPHEALTH_USER` | backend | Dashboard username (default `admin`) |
 | `CROPHEALTH_PASSWORD` | backend | Dashboard password (default `crophealth2026`) |
 | `CROPHEALTH_SECRET` | backend | Token signing key. If unset, a random key is created at startup and all sessions end when the backend restarts |
-| `NEXT_PUBLIC_API_BASE` | frontend | Backend address (default `http://127.0.0.1:8000`). Set this to your deployed backend URL |
+| `API_BASE` | dashboard container | Backend address the dashboard calls (default `http://localhost:8000` in Docker Compose). Set this to your deployed API URL |
 
 Copy `.env.example` to `.env` and edit it. Never commit `.env`.
 
@@ -148,25 +148,38 @@ Copy `.env.example` to `.env` and edit it. Never commit `.env`.
 
 ---
 
-## Deployment (Render)
+## Run with Docker (local)
 
-The whole platform runs on Render's free plan, using the `render.yaml` blueprint:
+You need Docker Desktop (or Docker Engine with the Compose plugin).
 
-| Service | Type | Source |
-|---------|------|--------|
-| `crophealth-api` | Docker web service (FastAPI) | `Dockerfile` |
-| `crophealth-dashboard` | Static site (Next.js export) | `frontend/` |
+```bash
+docker compose up --build
+```
+
+- Dashboard: http://localhost:3000 (sign in with `admin` / `crophealth2026`)
+- API and interactive docs: http://localhost:8000/docs
+
+Stop with `Ctrl+C`, or `docker compose down`. The API image is built from the repository root `Dockerfile`, and the dashboard image from `frontend/Dockerfile` (a Next.js static export served by nginx).
+
+## Deployment (Render, Docker)
+
+Both services run as Docker containers on Render's free plan, using the `render.yaml` blueprint:
+
+| Service | Image source | Port |
+|---------|--------------|------|
+| `crophealth-api` | `Dockerfile` (FastAPI) | Render `$PORT` |
+| `crophealth-dashboard` | `frontend/Dockerfile` (nginx serving the dashboard) | Render `$PORT` |
 
 **Steps**
 1. Push this repository to GitHub.
-2. In Render, choose **New → Blueprint**, select the repository, and apply. Render creates both services.
+2. In Render, choose **New → Blueprint**, select the repository, and apply. Render builds and starts both services.
 3. Open `crophealth-api` and copy its URL (for example `https://crophealth-api.onrender.com`). Check `<url>/api/v1/health` shows `"model_loaded": true`.
-4. Open `crophealth-dashboard`, go to **Environment**, and set `NEXT_PUBLIC_API_BASE` to the API URL from step 3. Then **Manual Deploy → Clear build cache & deploy**. The value is baked into the static build, so the dashboard must be rebuilt after it changes.
+4. Open `crophealth-dashboard`, go to **Environment**, set `API_BASE` to the API URL from step 3, and save. The container reads it at start, so no rebuild is needed.
 5. Open the dashboard URL. That is the live link. Sign in with `admin` / `crophealth2026`.
 
 **Notes**
 - Free services sleep after 15 minutes without traffic and take about a minute to wake. Open the link shortly before evaluation.
-- To run the backend container locally: `docker build -t crophealth-api .` then `docker run -p 8000:8000 crophealth-api`.
+- The first Docker build on Render takes several minutes, because it installs the scientific Python packages.
 
 **Live app:** `<add dashboard URL here>` · **Sign-in:** `admin` / `crophealth2026`
 

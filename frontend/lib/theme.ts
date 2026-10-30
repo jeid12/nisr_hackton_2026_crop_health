@@ -2,7 +2,9 @@
 // Series colors are the validated categorical slots (blue, orange, aqua) from the dataviz reference palette.
 // Status colors are reserved for risk tiers and always appear with a label, never on color alone.
 
-export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8000';
+// Runtime config (public/config.js, written by the container at start) wins over the build-time variable.
+const runtimeApi = typeof window !== 'undefined' ? (window as unknown as { CROPHEALTH_API_BASE?: string }).CROPHEALTH_API_BASE : '';
+export const API_BASE = runtimeApi || process.env.NEXT_PUBLIC_API_BASE || 'http://127.0.0.1:8000';
 
 export const SERIES = {
   humidity: '#2a78d6',
