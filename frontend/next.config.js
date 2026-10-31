@@ -6,7 +6,7 @@ const nextConfig = {
   output: 'export',
   reactStrictMode: true,
   env: {
-    CROPHEALTH_API_BASE: process.env.Config || process.env.API_BASE || 'https://nisr-hackton-2026-crop-health.onrender.com',
+    CROPHEALTH_API_BASE: process.env.Config || process.env.API_BASE || 'https://nisr-hackton-2026-crop-health-dfdn.onrender.com',
   },
 };
 
