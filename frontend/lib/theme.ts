@@ -4,7 +4,9 @@
 
 // Runtime config (public/config.js, written by the container at start) wins over the build-time variable.
 const runtimeApi = typeof window !== 'undefined' ? (window as unknown as { CROPHEALTH_API_BASE?: string }).CROPHEALTH_API_BASE : '';
-export const API_BASE = runtimeApi || process.env.CROPHEALTH_API_BASE || 'https://nisr-hackton-2026-crop-health-dfdn.onrender.com';
+// Trailing slashes are removed so paths like '/api/v1/...' never produce '//api/v1/...'.
+const rawApi = runtimeApi || process.env.CROPHEALTH_API_BASE || 'https://nisr-hackton-2026-crop-health-dfdn.onrender.com';
+export const API_BASE = rawApi.replace(/\/+$/, '');
 
 export const SERIES = {
   humidity: '#2a78d6',
