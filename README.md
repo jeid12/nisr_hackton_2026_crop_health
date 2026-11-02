@@ -25,7 +25,7 @@ CropHealth EWS forecasts two fungal diseases of Irish potato and tomato, Late Bl
 
 Future deployment on field sensors (IoT) is described in [Future work: IoT implementation roadmap](#future-work-iot-implementation-roadmap).
 
-### Criterion 1: Problem understanding and relevance (20 pts)
+### Criterion 1: Problem understanding and relevance 
 
 **The problem.** Smallholder farmers of potato, tomato, pepper, and eggplant lose yield to fungal diseases, especially Late Blight (*Phytophthora infestans*) and Early Blight (*Alternaria solani*). Diseases develop with temperature, relative humidity, leaf wetness, and soil moisture. Most farmers spray on a routine schedule rather than on conditions, which wastes money on chemicals, leaves disease uncontrolled when conditions are dangerous, and adds chemical runoff to watersheds. In the NISR Seasonal Agricultural Survey (SAS) 2026 Season A, 74.11% of Musanze farmers reported applying chemical pesticides.
 
@@ -41,7 +41,7 @@ Future deployment on field sensors (IoT) is described in [Future work: IoT imple
 - **Rwanda Agriculture and Animal Resources Development Board (RAB):** the project plan includes RAB as technical partner for extension and disease surveillance.
 - **Law No. 058/2021 on personal data protection:** the data plan keeps farmer identifiers separate from analysis data.
 
-### Criterion 2: Data use and methodology (20 pts)
+### Criterion 2: Data use and methodology 
 
 **Datasets**
 - **NISR SAS 2026 Season A tables:** district baselines for pesticide adoption, chemical distribution, and crop areas (`data/Tables_2026 Season A.xlsx`).
@@ -57,7 +57,7 @@ Future deployment on field sensors (IoT) is described in [Future work: IoT imple
 
 **Honest scope.** Reported test results come from the team's training run. The training script is not yet in this repository, so those figures cannot be reproduced from the code here. The live simulator approximates the 12-hour features from a single reading, so its outputs are indicative rather than identical to offline test results (see [Known limitations](#known-limitations)).
 
-### Criterion 3: Technology innovation (20 pts)
+### Criterion 3: Technology innovation 
 
 - **Dual-disease prediction in one model:** one Random Forest covers two pathogens with different environmental optima (cool-wet for Late Blight, warm-humid for Early Blight).
 - **Decision support, not just a score:** each prediction maps to a risk tier and a recommended action, such as a systemic fungicide for an emergency or skipping spraying in safe conditions.
@@ -65,7 +65,7 @@ Future deployment on field sensors (IoT) is described in [Future work: IoT imple
 - **Modern, portable architecture:** a stateless FastAPI service with a trained model, a Next.js dashboard, token-based sign-in, and Docker images for both services, deployable on Render.
 - **Designed for sensors:** the model's inputs match the variables that field sensors measure (temperature, humidity, leaf wetness, soil moisture), so hardware can be connected without redesigning the model (see the IoT roadmap).
 
-### Criterion 4: Usability and design of the prototype (20 pts)
+### Criterion 4: Usability and design of the prototype 
 
 - **Sign-in and navigation:** a sign-in page guards the dashboard. A sidebar separates the Risk Simulator from Telemetry & NISR Data, shows the API status, and signs out. On phones, the sidebar becomes a drawer.
 - **Risk Simulator:** sliders for temperature, humidity, leaf wetness, soil moisture, dew duration, and stratum. Three one-click presets cover a crisis, a warm-wet trigger, and a safe sunny afternoon. Each disease shows a gauge, a risk tier, and a recommended action.
@@ -73,7 +73,7 @@ Future deployment on field sensors (IoT) is described in [Future work: IoT imple
 - **Telemetry and NISR data:** 48-hour panels for humidity, soil moisture, leaf wetness, temperature, and risk, on a shared time axis, with the 85% humidity and 18 °C thresholds marked. Also NISR chemical-distribution charts and feature importances.
 - **Clear status:** risk tiers always show a label and an icon, not colour alone. Chart colours come from a palette checked for colour-vision accessibility.
 
-### Criterion 5: Tangible impact (20 pts)
+### Criterion 5: Tangible impact 
 
 **Who can use it**
 - Smallholder potato and tomato farmers, starting in the pilot districts of Musanze, Huye, and Kirehe (as planned in the project proposal).
