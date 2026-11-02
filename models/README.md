@@ -204,3 +204,16 @@ These are projections from the proposal, not measured results from this prototyp
 - **Originality:** The model, data fusion, and simulation built for the NISR 2026 Hackathon are the team's work. They build on earlier cyber-physical systems work at the University of Rwanda, College of Science and Technology.
 - **AI tools:** AI assistants were used for code syntax checks, UI styling, and documentation structure. The epidemiological logic, data fusion, and configuration were reviewed by the authors.
 - **Intellectual property:** The submitted work is assigned to NISR as specified in the competition rules.
+
+---
+
+## 13. Future model work
+
+These steps follow the project proposal and address the limitations in section 8.
+
+1. **Real 12-hour history.** Train and serve on the same feature definitions, using stored sensor readings instead of the single-reading approximation used by the live simulator.
+2. **Forecast horizon.** Move from the current per-hour risk to the proposal's design: 24 to 72 hours of history predicting outbreak probability within the next 7 days.
+3. **More diseases.** Add Powdery Mildew (*Leveillula taurica*) and Anthracnose (*Colletotrichum* species) as separate models, with the same method.
+4. **Retraining from outcomes.** Use scouting results and recorded spraying outcomes to retrain and monitor performance over time.
+5. **Reproducibility.** Add the data pipeline and training script to the repository, so the reported metrics can be regenerated.
+6. **Sensor calibration.** Calibrate each field sensor against reference instruments before using its readings for prediction (see the IoT roadmap in the root README).
